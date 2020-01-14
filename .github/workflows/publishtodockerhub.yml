@@ -9,9 +9,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: textbelt-docker
-      uses: elgohr/Publish-Docker-Github-Action@master
+    - uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: hexeth/textbelt-docker
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         dockerfile: Dockerfile
+        snapshot: true
